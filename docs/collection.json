@@ -38,6 +38,13 @@
             "@type": "sc:Collection",
             "label": "スタンフォード大学図書館SearchWorks(2720)",
             "vhint": "use-thumb"
+        },
+        {
+            "@context": "http://iiif.io/api/presentation/2/context.json",
+            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/europeana.json",
+            "@type": "sc:Collection",
+            "label": "ヨーロピアナAPI(10) 【動的生成】",
+            "vhint": "use-thumb"
         }
     ],
     "label": "Cultural Japan IIIF Collections",
