@@ -49,7 +49,7 @@ for collection_id in mapByCollection:
 
     collection_data = {
         "@context": "http://iiif.io/api/presentation/2/context.json",
-        "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/"+collection_id+".json", # uri_prefix + "/collections/" + collection_id + ".json",
+        "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/"+collection_id+".json", # uri_prefix + "/collections/" + collection_id + ".json",
         "@type": "sc:Collection",
         "label": collectionObj["label"] + " ("+str(len(collectionObj["manifests"]))+") 【動的生成】",
         "manifests": collectionObj["manifests"],
