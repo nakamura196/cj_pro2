@@ -6,8 +6,10 @@ import time
 import sys
 import argparse
 
-types = ["cj", "js"]
-
+types = [
+    # "cj", 
+    "js"
+]
 
 for type in types:
 
@@ -24,13 +26,17 @@ for type in types:
 
         print(page)
 
-        
-
         endpoint = "https://ld.cultural.jp/sparql" if type == "cj" else "https://jpsearch.go.jp/rdf/sparql"
 
         sparql = SPARQLWrapper(endpoint=endpoint, returnFormat='json')
 
         # time.sleep(1)
+
+        # ?o schema:url ?manifest . MINUS { ?manifest a <http://iiif.io/api/presentation/2#Manifest> . }
+        # optional { ?p schema:name ?name . filter(lang(?name) = "en") }
+        # optional { ?o schema:license ?license . }
+        # optional { ?s schema:image ?thumbnail }
+        # ?name ?license 
 
         q = ("""
             PREFIX jps: <https://jpsearch.go.jp/term/property#>
@@ -51,21 +57,14 @@ for type in types:
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
-            select distinct ?title ?label ?name ?license ?thumbnail ?s where {
+            select distinct ?title ?label ?thumbnail ?s where {
                 ?s rdfs:label ?title . 
-                
+                ?s schema:image ?thumbnail . 
                 ?s jps:accessInfo ?o.
-                
                 ?o schema:associatedMedia ?am . 
-                MINUS { ?o schema:url ?manifest . ?manifest a <http://iiif.io/api/presentation/2#Manifest> . }
                 ?s jps:sourceInfo ?so.
                 ?so schema:provider ?p.
                 ?p rdfs:label ?label . 
-                optional { ?p schema:name ?name . filter(lang(?name) = "en") }
-
-                optional { ?o schema:license ?license . }
-                optional { ?s schema:image ?thumbnail }
-
             } limit """+str(unit)+""" offset """ + str(unit * page) + """
         """)
         sparql.setQuery(q)
@@ -93,10 +92,14 @@ for type in types:
 
             id = obj["s"]["value"].split("/")[-1]
             collection_id = id.split("-")[0]
+            
             title = obj["title"]["value"]
             label = obj["label"]["value"]
+            
             en = obj["name"]["value"] if "name" in obj else label
+            
             manifest = "https://api.cultural.jp/iiif/"+id+"/manifest"  # obj["manifest"]["value"]
+            
             thumbnail = obj["thumbnail"]["value"] if "thumbnail" in obj else ""
             license = obj["license"]["value"] if "license" in obj else ""
             

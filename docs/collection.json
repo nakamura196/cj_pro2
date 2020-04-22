@@ -41,6 +41,13 @@
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
+            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/arc_nishikie.json",
+            "@type": "sc:Collection",
+            "label": "ARC浮世絵ポータルデータベース (123805) 【動的生成】",
+            "vhint": "use-thumb"
+        },
+        {
+            "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/rijks.json",
             "@type": "sc:Collection",
             "label": "アムステルダム国立美術館API (14814) 【動的生成】",
