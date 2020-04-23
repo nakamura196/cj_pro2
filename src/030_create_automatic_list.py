@@ -7,9 +7,11 @@ import sys
 import argparse
 
 types = [
-    # "cj", 
+    "cj", 
     "js"
 ]
+
+manifests = []
 
 for type in types:
 
@@ -81,25 +83,21 @@ for type in types:
 
         page += 1
 
-        show_flg = True
-
         for obj in results["results"]["bindings"]:
-            
-            if show_flg:
-                print(obj)
-
-            show_flg = False
 
             id = obj["s"]["value"].split("/")[-1]
+            manifest = "https://api.cultural.jp/iiif/"+id+"/manifest"  # obj["manifest"]["value"]
+
+            if manifest in manifests:
+                continue
+            manifests.append(manifest)
+
             collection_id = id.split("-")[0]
             
             title = obj["title"]["value"]
             label = obj["label"]["value"]
             
             en = obj["name"]["value"] if "name" in obj else label
-            
-            manifest = "https://api.cultural.jp/iiif/"+id+"/manifest"  # obj["manifest"]["value"]
-            
             thumbnail = obj["thumbnail"]["value"] if "thumbnail" in obj else ""
             license = obj["license"]["value"] if "license" in obj else ""
             

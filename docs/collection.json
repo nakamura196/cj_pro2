@@ -50,14 +50,14 @@
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/rijks.json",
             "@type": "sc:Collection",
-            "label": "アムステルダム国立美術館API (14814) 【動的生成】",
+            "label": "アムステルダム国立美術館API (7407) 【動的生成】",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/chicago.json",
             "@type": "sc:Collection",
-            "label": "シカゴ美術館API (18218) 【動的生成】",
+            "label": "シカゴ美術館API (9109) 【動的生成】",
             "vhint": "use-thumb"
         },
         {

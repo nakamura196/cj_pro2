@@ -7,6 +7,8 @@ uri_prefix = "https://nakamura196.github.io/cj-pro2"
 
 mapByCollection = {}
 
+manifests = []
+
 for type in types:
 
 
@@ -16,6 +18,11 @@ for type in types:
 
     for i in range(len(df.index)):
         manifest = df.iloc[i, 3]
+
+        if manifest in manifests:
+            continue
+    
+        manifests.append(manifest)
 
         label = df.iloc[i, 1]
 
