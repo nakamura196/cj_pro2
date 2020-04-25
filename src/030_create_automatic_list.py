@@ -8,7 +8,7 @@ import argparse
 
 types = [
     "cj", 
-    "js"
+    # "js"
 ]
 
 manifests = []
@@ -64,6 +64,7 @@ for type in types:
                 ?s schema:image ?thumbnail . 
                 ?s jps:accessInfo ?o.
                 ?o schema:associatedMedia ?am . 
+                minus { ?o schema:url ?manifest . ?manifest a <http://iiif.io/api/presentation/2#Manifest> } . 
                 ?s jps:sourceInfo ?so.
                 ?so schema:provider ?p.
                 ?p rdfs:label ?label . 

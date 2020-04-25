@@ -10,10 +10,15 @@ with open(file) as f:
 
     for collection in collections:
 
+        print(collection["@id"])
+
         filename = collection["@id"].split("/")[-1]
 
         f2 = open("../docs/collections/"+filename, 'w')
+
+        collection["@id"] = collection["@id"].replace("/automatic/", "/")
+
         json.dump(collection, f2, 
-        ensure_ascii=False, 
+        ensure_ascii=False, list
         # indent=4,
             sort_keys=True, separators=(',', ': '))

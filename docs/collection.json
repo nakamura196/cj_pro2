@@ -8,35 +8,42 @@
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/utokyo_da.json",
             "@type": "sc:Collection",
-            "label": "東京大学学術資産等アーカイブズポータル(36586)",
+            "label": "東京大学学術資産等アーカイブズポータル (36584) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/dignl.json",
             "@type": "sc:Collection",
-            "label": "国立国会図書館デジタルコレクション(346484)",
+            "label": "国立国会図書館デジタルコレクション (346046) ",
+            "vhint": "use-thumb"
+        },
+        {
+            "@context": "http://iiif.io/api/presentation/2/context.json",
+            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/dpla.json",
+            "@type": "sc:Collection",
+            "label": "DPLA API (12458) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/harvard.json",
             "@type": "sc:Collection",
-            "label": "ハーバード美術館API(8737)",
+            "label": "ハーバード美術館API (8737) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/iiifman.json",
             "@type": "sc:Collection",
-            "label": "IIIF Discovery in Japan(153269)",
+            "label": "IIIF Discovery in Japan (132961) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/stanfordsw.json",
             "@type": "sc:Collection",
-            "label": "スタンフォード大学図書館SearchWorks(2720)",
+            "label": "スタンフォード大学図書館SearchWorks (2696) ",
             "vhint": "use-thumb"
         },
         {
@@ -51,6 +58,13 @@
             "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/rijks.json",
             "@type": "sc:Collection",
             "label": "アムステルダム国立美術館API (7407) 【動的生成】",
+            "vhint": "use-thumb"
+        },
+        {
+            "@context": "http://iiif.io/api/presentation/2/context.json",
+            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/dpla.json",
+            "@type": "sc:Collection",
+            "label": "DPLA API (6217) 【動的生成】",
             "vhint": "use-thumb"
         },
         {

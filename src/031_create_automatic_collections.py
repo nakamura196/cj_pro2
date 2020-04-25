@@ -11,13 +11,13 @@ manifests = []
 
 for type in types:
 
-
     df = pd.read_csv('data/list_'+type+'.csv')
-
-    
 
     for i in range(len(df.index)):
         manifest = df.iloc[i, 3]
+
+        if i % 1000 == 0:
+            print(i+1, len(df.index), manifest)
 
         if manifest in manifests:
             continue
