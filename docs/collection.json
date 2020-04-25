@@ -1,96 +1,96 @@
 {
     "@context": "http://iiif.io/api/presentation/2/context.json",
-    "@id": "https://nakamura196.github.io/cj-pro2/collection.json",
+    "@id": "https://app.cultural.jp/iiif-collection/collection.json",
     "@type": "sc:Collection",
     "attribution": "Cultural Japan",
     "collections": [
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/utokyo_da.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/utokyo_da.json",
             "@type": "sc:Collection",
             "label": "東京大学学術資産等アーカイブズポータル (36584) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/dignl.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/dignl.json",
             "@type": "sc:Collection",
             "label": "国立国会図書館デジタルコレクション (346046) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/dpla.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/dpla.json",
             "@type": "sc:Collection",
             "label": "DPLA API (12458) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/harvard.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/harvard.json",
             "@type": "sc:Collection",
             "label": "ハーバード美術館API (8737) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/iiifman.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/iiifman.json",
             "@type": "sc:Collection",
             "label": "IIIF Discovery in Japan (132961) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/stanfordsw.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/stanfordsw.json",
             "@type": "sc:Collection",
             "label": "スタンフォード大学図書館SearchWorks (2696) ",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/arc_nishikie.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/arc_nishikie.json",
             "@type": "sc:Collection",
             "label": "ARC浮世絵ポータルデータベース (123805) 【動的生成】",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/rijks.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/rijks.json",
             "@type": "sc:Collection",
             "label": "アムステルダム国立美術館API (7407) 【動的生成】",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/dpla.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/dpla.json",
             "@type": "sc:Collection",
             "label": "DPLA API (6217) 【動的生成】",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/chicago.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/chicago.json",
             "@type": "sc:Collection",
             "label": "シカゴ美術館API (9109) 【動的生成】",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/europeana.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/europeana.json",
             "@type": "sc:Collection",
             "label": "ヨーロピアナAPI (58917) 【動的生成】",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/britishm.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/britishm.json",
             "@type": "sc:Collection",
             "label": "英国博物館コレクション (16533) 【動的生成】",
             "vhint": "use-thumb"
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
-            "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/vam.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/vam.json",
             "@type": "sc:Collection",
             "label": "ヴィクトリア・アンド・アルバート博物館API (3045) 【動的生成】",
             "vhint": "use-thumb"

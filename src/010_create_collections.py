@@ -16,9 +16,6 @@ with open(file) as f:
 
         f2 = open("../docs/collections/"+filename, 'w')
 
-        collection["@id"] = collection["@id"].replace("/automatic/", "/")
+        collection["@id"] = collection["@id"].replace("/automatic/", "/").replace("https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/", "https://app.cultural.jp/iiif-collection/")
 
-        json.dump(collection, f2, 
-        ensure_ascii=False, list
-        # indent=4,
-            sort_keys=True, separators=(',', ': '))
+        json.dump(collection, f2, ensure_ascii=False, sort_keys=True, separators=(',', ': '))

@@ -63,6 +63,8 @@ for collection_id in mapByCollection:
         "vhint": "use-thumb"
     }
 
+    collection_data["@id"] = collection_data["@id"].replace("https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/", "https://app.cultural.jp/iiif-collection/")
+
     f2 = open("../docs/collections/automatic/"+collection_id+".json", 'w')
     json.dump(collection_data, f2, 
     ensure_ascii=False, 
