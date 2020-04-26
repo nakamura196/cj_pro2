@@ -34,6 +34,13 @@
         },
         {
             "@context": "http://iiif.io/api/presentation/2/context.json",
+            "@id": "https://app.cultural.jp/iiif-collection/collections/europeana.json",
+            "@type": "sc:Collection",
+            "label": "ヨーロピアナAPI (66892) ",
+            "vhint": "use-thumb"
+        },
+        {
+            "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://app.cultural.jp/iiif-collection/collections/iiifman.json",
             "@type": "sc:Collection",
             "label": "IIIF Discovery in Japan (132961) ",
@@ -78,7 +85,7 @@
             "@context": "http://iiif.io/api/presentation/2/context.json",
             "@id": "https://app.cultural.jp/iiif-collection/collections/automatic/europeana.json",
             "@type": "sc:Collection",
-            "label": "ヨーロピアナAPI (58917) 【動的生成】",
+            "label": "ヨーロピアナAPI (39) 【動的生成】",
             "vhint": "use-thumb"
         },
         {

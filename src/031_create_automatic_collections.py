@@ -1,7 +1,10 @@
 import json
 import pandas as pd
 
-types = ["js", "cj"]
+types = [
+    # "js", 
+    "cj"
+]
 
 uri_prefix = "https://nakamura196.github.io/cj-pro2"
 

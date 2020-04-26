@@ -15,6 +15,8 @@ manifests = []
 
 for type in types:
 
+    print(type)
+
     rows = []
     rows.append(["title", "label", "label_en", "manifest", "thumbnail", "license", "id"])
 
