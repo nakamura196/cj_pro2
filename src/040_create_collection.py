@@ -7,7 +7,7 @@ uri_prefix = "https://app.cultural.jp/iiif-collection"
 collections = []
 
 path = "/Users/nakamura/git/d_cj/cj_pro2/docs/collections/*.json"
-path = "/home/ec2-user/git/d_cj/cj_pro2/docs/collections/*.json"
+path = "../docs/collections/*.json"
 
 files = glob.glob(path, recursive=True)
 
