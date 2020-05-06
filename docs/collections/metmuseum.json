@@ -1,0 +1,1 @@
+{"@context": "http://iiif.io/api/presentation/2/context.json","@id": "https://app.cultural.jp/iiif-collection/collections/metmuseum.json","@type": "sc:Collection","collections": [{"@id": "https://app.cultural.jp/iiif-collection/collections/metmuseum/メトロポリタン美術館.json","@type": "sc:Collection","label": "メトロポリタン美術館 (649)"}],"label": "メトロポリタン美術館デジタルコレクション (649)","vhint": "use-thumb"}

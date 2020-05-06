@@ -4,11 +4,12 @@ import glob
 
 uri_prefix = "https://app.cultural.jp/iiif-collection"
 
-# files = glob.glob("/Users/nakamura/git/d_cj/cj_pro2/docs/collections/*.json", recursive=True)
-
 collections = []
 
-files = glob.glob("/Users/nakamura/git/d_cj/cj_pro2/docs/collections/*.json", recursive=True)
+path = "/Users/nakamura/git/d_cj/cj_pro2/docs/collections/*.json"
+path = "/home/ec2-user/git/d_cj/cj_pro2/docs/collections/*.json"
+
+files = glob.glob(path, recursive=True)
 
 for file in files:
     with open(file) as f:
@@ -19,7 +20,7 @@ for file in files:
 
 
 
-files = glob.glob("/Users/nakamura/git/d_cj/cj_pro2/docs/collections/automatic/*.json", recursive=True)
+files = glob.glob("../docs/collections/automatic/*.json", recursive=True)
 
 for file in files:
     with open(file) as f:
@@ -42,6 +43,6 @@ collection = {
     "vhint": "use-thumb"
 }
 
-f2 = open("/Users/nakamura/git/d_cj/cj_pro2/docs/collection.json", 'w')
+f2 = open("../docs/collection.json", 'w')
 json.dump(collection, f2, ensure_ascii=False, indent=4,
     sort_keys=True, separators=(',', ': '))

@@ -3,7 +3,10 @@ import pandas as pd
 import os
 import glob
 
+json_dir = "/home/ec2-user/git/json"
+
 path = "/Users/nakamura/git/json/cj/iiif/collections/**/*.json"
+path = json_dir + "/cj/iiif/collections/**/*.json"
 
 files = glob.glob(path)
 
@@ -23,8 +26,7 @@ for file in files:
         f2 = open(dir+"/"+filename, 'w')
         json.dump(df, f2, ensure_ascii=False, sort_keys=True, separators=(',', ': '))
 
-
-path = "/Users/nakamura/git/json/cj/iiif/collections/*.json"
+path = json_dir + "/cj/iiif/collections/*.json"
 
 files = glob.glob(path)
 
