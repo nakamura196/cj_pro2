@@ -2,21 +2,33 @@ import json
 import pandas as pd
 import glob
 
-# uri_prefix = "https://nakamura196.github.io/cj-pro2"
 uri_prefix = "https://app.cultural.jp/iiif-collection"
 
-files = glob.glob("/Users/nakamura/git/d_cj/cj_pro2/docs/collections/**/*.json", recursive=True)
+# files = glob.glob("/Users/nakamura/git/d_cj/cj_pro2/docs/collections/*.json", recursive=True)
 
 collections = []
+
+files = glob.glob("/Users/nakamura/git/d_cj/cj_pro2/docs/collections/*.json", recursive=True)
 
 for file in files:
     with open(file) as f:
         df = json.load(f)
-
-
-        df.pop("manifests")
+        # df.pop("manifests")
 
         collections.append(df)
+
+
+
+files = glob.glob("/Users/nakamura/git/d_cj/cj_pro2/docs/collections/automatic/*.json", recursive=True)
+
+for file in files:
+    with open(file) as f:
+        df = json.load(f)
+        # df.pop("manifests")
+
+        collections.append(df)
+
+
 
 ####### Collection
 

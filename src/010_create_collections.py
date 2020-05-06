@@ -1,21 +1,43 @@
 import json
 import pandas as pd
+import os
+import glob
 
-file = "/Users/nakamura/git/json/cj/iiif/collection.json"
+path = "/Users/nakamura/git/json/cj/iiif/collections/**/*.json"
 
-with open(file) as f:
-    df = json.load(f)
+files = glob.glob(path)
 
-    collections = df["collections"]
+for file in files:
 
-    for collection in collections:
+    print(file)
 
-        print(collection["@id"])
+    with open(file) as f:
+        df = json.load(f)
 
-        filename = collection["@id"].split("/")[-1]
+        dirname = file.split("/")[-2]
+        filename = file.split("/")[-1]
 
-        f2 = open("../docs/collections/"+filename, 'w')
+        dir = "../docs/collections/"+dirname
+        os.makedirs(dir, exist_ok=True)
 
-        collection["@id"] = collection["@id"].replace("/automatic/", "/").replace("https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/", "https://app.cultural.jp/iiif-collection/")
+        f2 = open(dir+"/"+filename, 'w')
+        json.dump(df, f2, ensure_ascii=False, sort_keys=True, separators=(',', ': '))
 
-        json.dump(collection, f2, ensure_ascii=False, sort_keys=True, separators=(',', ': '))
+
+path = "/Users/nakamura/git/json/cj/iiif/collections/*.json"
+
+files = glob.glob(path)
+
+for file in files:
+
+    print(file)
+
+    with open(file) as f:
+        df = json.load(f)
+
+        filename = file.split("/")[-1]
+
+        dir = "../docs/collections/"
+
+        f2 = open(dir+"/"+filename, 'w')
+        json.dump(df, f2, ensure_ascii=False, sort_keys=True, separators=(',', ': '))

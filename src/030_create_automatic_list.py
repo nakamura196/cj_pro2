@@ -8,7 +8,7 @@ import argparse
 
 types = [
     "cj", 
-    # "js"
+    "js"
 ]
 
 manifests = []
@@ -18,7 +18,7 @@ for type in types:
     print(type)
 
     rows = []
-    rows.append(["title", "label", "label_en", "manifest", "thumbnail", "license", "id"])
+    rows.append(["title", "label", "label_en", "manifest", "thumbnail", "license", "id", "access label"])
 
     flg = True
 
@@ -61,7 +61,7 @@ for type in types:
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX owl: <http://www.w3.org/2002/07/owl#>
-            select distinct ?title ?label ?thumbnail ?s where {
+            select distinct ?title ?label ?alabel ?thumbnail ?s where {
                 ?s rdfs:label ?title . 
                 ?s schema:image ?thumbnail . 
                 ?s jps:accessInfo ?o.
@@ -70,6 +70,11 @@ for type in types:
                 ?s jps:sourceInfo ?so.
                 ?so schema:provider ?p.
                 ?p rdfs:label ?label . 
+
+                ?s jps:accessInfo ?ao.
+                ?ao schema:provider ?ap.
+                ?ap rdfs:label ?alabel .
+
             } limit """+str(unit)+""" offset """ + str(unit * page) + """
         """)
         sparql.setQuery(q)
@@ -103,9 +108,10 @@ for type in types:
             en = obj["name"]["value"] if "name" in obj else label
             thumbnail = obj["thumbnail"]["value"] if "thumbnail" in obj else ""
             license = obj["license"]["value"] if "license" in obj else ""
-            
 
-            rows.append([title, label, en, manifest, thumbnail, license, collection_id])
+            alabel = obj["alabel"]["value"]            
+
+            rows.append([title, label, en, manifest, thumbnail, license, collection_id, alabel])
 
     import csv
     f = open("data/list_"+type+".csv", 'w')

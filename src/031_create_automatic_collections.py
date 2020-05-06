@@ -1,12 +1,13 @@
 import json
 import pandas as pd
+import os
 
 types = [
-    # "js", 
+    "js", 
     "cj"
 ]
 
-uri_prefix = "https://nakamura196.github.io/cj-pro2"
+uri_prefix = "https://app.cultural.jp/iiif-collection"
 
 mapByCollection = {}
 
@@ -35,6 +36,17 @@ for type in types:
             mapByCollection[id] = {
                 "label" : label,
                 "label_en" : df.iloc[i, 2],
+                "collections" : {},
+                "vhint": "use-thumb"
+            }
+
+        tmp = mapByCollection[id]["collections"]
+        id2 = df.iloc[i, 7]
+
+        if id2 not in tmp:
+            tmp[id2] = {
+                "label" : id2,
+                "label_en" : id2,
                 "manifests" : [],
                 "vhint": "use-thumb"
             }
@@ -51,25 +63,66 @@ for type in types:
         if not pd.isnull(df.iloc[i, 5]):
             manifest_data["license"] = df.iloc[i, 5]
 
-        mapByCollection[id]["manifests"].append(manifest_data)
+        # mapByCollection[id]["manifests"].append(manifest_data)
+        tmp[id2]["manifests"].append(manifest_data)
 
 for collection_id in mapByCollection:
 
-    collectionObj = mapByCollection[collection_id]
+    collectionObj_1 = mapByCollection[collection_id]
+
+    tmp = collectionObj_1["collections"]
+
+    collections = []
+
+    count = 0
+
+    for id2 in tmp:
+        print("id2", id2)
+
+        collectionObj = tmp[id2]
+
+        collection_uri = uri_prefix + "/collections/automatic/" + collection_id + "/" + id2 + ".json"
+        collection_label = collectionObj["label"] + " ("+str(len(collectionObj["manifests"]))+") 【動的生成】"
+
+        collection_data = {
+            "@context": "http://iiif.io/api/presentation/2/context.json",
+            "@id": collection_uri,
+            "@type": "sc:Collection",
+            "label": collection_label,
+            "manifests": collectionObj["manifests"],
+            "vhint": "use-thumb"
+        }
+
+        count += len(collectionObj["manifests"])
+
+        # collection_data["@id"] = collection_data["@id"].replace("https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/", "https://app.cultural.jp/iiif-collection/")
+
+        dir = "../docs/collections/automatic/" + collection_id
+        os.makedirs(dir, exist_ok=True)
+
+        f2 = open(dir + "/"+id2+".json", 'w')
+        json.dump(collection_data, f2, 
+        ensure_ascii=False, 
+        # indent=4,
+            sort_keys=True, separators=(',', ': '))
+
+        collections.append({
+            "@id": collection_uri,
+            "@type": "sc:Collection",
+            "label": collection_label
+        })
 
     collection_data = {
         "@context": "http://iiif.io/api/presentation/2/context.json",
-        "@id": "https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/collections/automatic/"+collection_id+".json", # uri_prefix + "/collections/" + collection_id + ".json",
+        "@id": uri_prefix + "/collections/" + collection_id + ".json",
         "@type": "sc:Collection",
-        "label": collectionObj["label"] + " ("+str(len(collectionObj["manifests"]))+") 【動的生成】",
-        "manifests": collectionObj["manifests"],
+        "label": collectionObj_1["label"] + " ("+str(count)+") 【動的生成】",
+        "collections": collections,
         "vhint": "use-thumb"
     }
 
-    collection_data["@id"] = collection_data["@id"].replace("https://raw.githubusercontent.com/nakamura196/cj_pro2/master/docs/", "https://app.cultural.jp/iiif-collection/")
-
-    f2 = open("../docs/collections/automatic/"+collection_id+".json", 'w')
+    f2 = open(dir + ".json", 'w')
     json.dump(collection_data, f2, 
     ensure_ascii=False, 
-    # indent=4,
+    indent=4,
         sort_keys=True, separators=(',', ': '))
